@@ -1,4 +1,4 @@
-# vue-tel-input-vuetify
+# vuetify-tel-input (forked from yogakurniawan/vue-tel-input-vuetify)
 International Telephone Input with Vuetify.
 
 <p align="center">
@@ -167,7 +167,10 @@ Use the `vue-tel-input-vuetify` component:
   | `hint` | `String` | `undefined` | Hint text |
   | `suffix` | `String` | `undefined` | Displays suffix text |
   | `prefix` | `String` | `undefined` | Displays prefix text |
-  | `background-color` | `String` | `undefined` | Changes the background-color of the input |
+  | `color` | `String` | `undefined` | Applies specified color to the tel input |
+  | `background-color` | `String` | `undefined` | Changes the background-color of the tel input |
+  | `select-color` | `String` | `undefined` | Applies specified color to the country select |
+  | `select-background` | `String` | `undefined` | Changes the background-color of the country select |
   | `rules` | `String` | `Array` | Accepts an array of functions that take an input value as an argument and return either true / false or a string with an error message |
   | `loader-height` | `Number` &#124; `String` | `2` | Specifies the height of the loader |
   | `loading` | `String` &#124; `Boolean` | `false` | Displays linear progress bar. Can either be a String which specifies which color is applied to the progress bar (any material color or theme color - primary, secondary, success, info, warning, error) or a Boolean which uses the component color (set by color prop - if it's supported by the component) or the primary color |
@@ -206,6 +209,7 @@ Use the `vue-tel-input-vuetify` component:
   | `preferredCountries` | `Array` | `[]` | Preferred countries list, will be on top of the dropdown. ie `['AU', 'BR']` |
   | `required` | `Boolean` | `false` | Required property for HTML5 required attribute |
   | `wrapperClasses` | `String` &#124; `Array` &#124; `Object` | `''` | Custom classes for the wrapper |
+  | `validCharactersOnly` | `Boolean` | `false` | Only allow valid characters in a phone number (will also verify in mounted, so phone number with invalid characters will be shown as an empty string) |
 
 ### Events
 
