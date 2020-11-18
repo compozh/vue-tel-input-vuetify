@@ -76,6 +76,7 @@
       @blur="onBlur"
       @focus="onFocus"
       @click="onClick"
+      @click:clear="phone = ''"
       @change="onChange"
       @mousedown="onMouseDown"
       @mouseup="onMouseUp"
