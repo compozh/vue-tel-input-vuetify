@@ -350,6 +350,10 @@ export default {
       type: Number,
       default: () => getDefault('maxLen'),
     },
+    validCharactersOnly: {
+      type: Boolean,
+      default: () => getDefault('validCharactersOnly'),
+    },
   },
   data() {
     return {
@@ -443,7 +447,11 @@ export default {
       }
     },
     phone(newValue, oldValue) {
-      if (newValue) {
+      if (this.validCharactersOnly && !this.testCharacters()) {
+        this.$nextTick(() => {
+          this.phone = oldValue;
+        });
+      } else if (newValue) {
         if (newValue[0] === '+') {
           const code = PhoneNumber(newValue).getRegionCode();
           if (code) {
@@ -598,7 +606,14 @@ export default {
         this.$emit('onInput', this.phoneObject); // Deprecated
       }
     },
+    testCharacters() {
+      const re = /^[()\-+0-9\s]*$/;
+      return re.test(this.phone);
+    },
     onInput(e) {
+      if (this.validCharactersOnly && !this.testCharacters()) {
+        return;
+      }
       // this.$refs.input.setCustomValidity(
       //   this.phoneObject.valid ? "" : this.invalidMsg
       // );
