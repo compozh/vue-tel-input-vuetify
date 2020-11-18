@@ -19,6 +19,7 @@
         item-text="name"
         item-value="dialCode"
         return-object
+        :menu-props="{nudgeBottom: 0}"
       >
         <template v-slot:selection>
           <div :class="activeCountry.iso2.toLowerCase()" class="vti__flag" />
