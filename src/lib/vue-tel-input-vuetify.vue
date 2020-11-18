@@ -13,7 +13,8 @@
         :light="light"
         :shaped="shaped"
         :rounded="rounded"
-        :background-color="backgroundColor"
+        :color="selectColor"
+        :background-color="selectBackground"
         :dense="dense"
         item-text="name"
         item-value="dialCode"
@@ -37,6 +38,7 @@
       :hint="hint"
       :suffix="suffix"
       :prefix="prefix"
+      :color="color"
       :background-color="backgroundColor"
       :rules="rules"
       :loader-height="loaderHeight"
@@ -186,7 +188,16 @@ export default {
     prefix: {
       type: String,
     },
+    color: {
+      type: String,
+    },
     backgroundColor: {
+      type: String,
+    },
+    selectColor: {
+      type: String,
+    },
+    selectBackground: {
       type: String,
     },
     rules: {
